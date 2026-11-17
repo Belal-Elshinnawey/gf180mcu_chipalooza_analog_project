@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/gf180mcu_chipalooza_analog_project/macros/inverter/schematic/xschem/inverter.sch
+.subckt inverter VDD vin vout VSS
+*.PININFO VDD:B VSS:B vin:I vout:O
+M1 vout vin VDD VDD pfet_03v3 L=2.5u W=20u nf=10
+M2 vout vin VSS VSS nfet_03v3 L=2.5u W=20u nf=10
+.ends

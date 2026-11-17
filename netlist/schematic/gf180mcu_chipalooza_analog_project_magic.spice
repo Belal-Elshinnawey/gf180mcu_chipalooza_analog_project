@@ -1,0 +1,4 @@
+** sch_path: /foss/designs/gf180mcu_chipalooza_analog_project/schematic/xschem/gf180mcu_chipalooza_analog_project.sch
+.subckt gf180mcu_chipalooza_analog_project
+
+.ends

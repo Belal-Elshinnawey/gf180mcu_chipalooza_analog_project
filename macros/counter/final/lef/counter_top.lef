@@ -1,0 +1,159 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO counter_top
+  CLASS BLOCK ;
+  FOREIGN counter_top ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 200.000 BY 100.000 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 22.240 15.380 23.840 82.620 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 175.840 15.380 177.440 82.620 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 25.540 15.380 27.140 82.620 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 179.140 15.380 180.740 82.620 ;
+    END
+  END VSS
+  PIN clock_i
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 81.760 0.560 82.320 ;
+    END
+  END clock_i
+  PIN counter_value_o[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 13.440 99.440 14.000 100.000 ;
+    END
+  END counter_value_o[0]
+  PIN counter_value_o[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 38.080 99.440 38.640 100.000 ;
+    END
+  END counter_value_o[1]
+  PIN counter_value_o[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 62.720 99.440 63.280 100.000 ;
+    END
+  END counter_value_o[2]
+  PIN counter_value_o[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 87.360 99.440 87.920 100.000 ;
+    END
+  END counter_value_o[3]
+  PIN counter_value_o[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 112.000 99.440 112.560 100.000 ;
+    END
+  END counter_value_o[4]
+  PIN counter_value_o[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 136.640 99.440 137.200 100.000 ;
+    END
+  END counter_value_o[5]
+  PIN counter_value_o[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 161.280 99.440 161.840 100.000 ;
+    END
+  END counter_value_o[6]
+  PIN counter_value_o[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 185.920 99.440 186.480 100.000 ;
+    END
+  END counter_value_o[7]
+  PIN enable_i
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 16.800 0.560 17.360 ;
+    END
+  END enable_i
+  PIN reset_n_i
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 49.280 0.560 49.840 ;
+    END
+  END reset_n_i
+  OBS
+      LAYER Nwell ;
+        RECT 6.290 15.250 193.630 82.750 ;
+      LAYER Metal1 ;
+        RECT 6.720 15.380 193.200 82.620 ;
+      LAYER Metal2 ;
+        RECT 8.540 99.140 13.140 99.860 ;
+        RECT 14.300 99.140 37.780 99.860 ;
+        RECT 38.940 99.140 62.420 99.860 ;
+        RECT 63.580 99.140 87.060 99.860 ;
+        RECT 88.220 99.140 111.700 99.860 ;
+        RECT 112.860 99.140 136.340 99.860 ;
+        RECT 137.500 99.140 160.980 99.860 ;
+        RECT 162.140 99.140 185.620 99.860 ;
+        RECT 186.780 99.140 189.700 99.860 ;
+        RECT 8.540 15.490 189.700 99.140 ;
+      LAYER Metal3 ;
+        RECT 0.860 81.460 187.510 82.460 ;
+        RECT 0.560 50.140 187.510 81.460 ;
+        RECT 0.860 48.980 187.510 50.140 ;
+        RECT 0.560 17.660 187.510 48.980 ;
+        RECT 0.860 16.500 187.510 17.660 ;
+        RECT 0.560 15.540 187.510 16.500 ;
+  END
+END counter_top
+END LIBRARY
+

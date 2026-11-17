@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/gf180mcu_chipalooza_analog_project/macros/inverter/schematic/xschem/inverter.sch
+.subckt inverter VDD vin vout VSS
+*.PININFO VDD:B VSS:B vin:I vout:O
+XM1 vout vin VDD VDD pfet_03v3 L=2.5u W=20u nf=10 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM2 vout vin VSS VSS nfet_03v3 L=2.5u W=20u nf=10 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+.ends

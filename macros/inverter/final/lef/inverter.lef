@@ -1,0 +1,52 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO inverter
+  CLASS BLOCK ;
+  FOREIGN inverter ;
+  ORIGIN 2.185 6.965 ;
+  SIZE 33.430 BY 9.280 ;
+  PIN VSS
+    USE GROUND ;
+    PORT
+      LAYER Metal1 ;
+        RECT 30.040 -6.965 31.040 -3.775 ;
+    END
+  END VSS
+  PIN vin
+    ANTENNAGATEAREA 100.000000 ;
+    PORT
+      LAYER Metal1 ;
+        RECT -0.150 -3.185 2.260 -1.475 ;
+    END
+  END vin
+  PIN VDD
+    USE POWER ;
+    PORT
+      LAYER Metal1 ;
+        RECT -1.230 -0.875 -0.230 2.315 ;
+    END
+  END VDD
+  PIN vout
+    ANTENNADIFFAREA 10.400000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 26.475 -5.210 27.475 0.545 ;
+    END
+  END vout
+  OBS
+      LAYER Nwell ;
+        RECT -2.185 -2.545 31.245 1.815 ;
+      LAYER Metal1 ;
+        RECT 0.070 -1.175 30.655 2.315 ;
+        RECT -1.285 -3.485 -0.450 -1.175 ;
+        RECT 2.560 -3.475 30.655 -1.175 ;
+        RECT 2.560 -3.485 29.740 -3.475 ;
+        RECT -1.285 -6.965 29.740 -3.485 ;
+      LAYER Metal2 ;
+        RECT 2.315 -5.210 26.175 0.545 ;
+  END
+END inverter
+END LIBRARY
+

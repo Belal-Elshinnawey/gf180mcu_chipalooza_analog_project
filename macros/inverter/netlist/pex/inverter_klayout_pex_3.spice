@@ -1,0 +1,58 @@
+* NGSPICE file created from inverter_pex.ext - technology: gf180mcuD
+
+.option scale=5n
+
+.subckt inverter_pex VDD vin vout VSS
+X0 vout vin VDD VDD.t2 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X1 vout vin VSS.t5 VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X2 VDD vin vout VDD.t7 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X3 VSS.t7 vin vout VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X4 vout vin VSS.t7 VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X5 vout vin VDD VDD.t6 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X6 VSS vin vout VSS nfet_03v3 ad=0.1056u pd=1.328m as=20.8n ps=0.504m w=400 l=500
+X7 VDD vin vout VDD.t1 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X8 vout vin VDD VDD.t0 pfet_03v3 ad=20.8n pd=0.504m as=0.1104u ps=1.352m w=400 l=500
+X9 vout vin VDD VDD.t4 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X10 VSS.t1 vin vout VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X11 VDD vin vout VDD.t3 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X12 VDD vin vout VDD.t5 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X13 VDD vin vout VDD.t9 pfet_03v3 ad=52n pd=1.06m as=20.8n ps=0.504m w=400 l=500
+X14 vout vin VSS.t1 VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X15 VSS.t3 vin vout VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X16 vout vin VSS.t0 VSS nfet_03v3 ad=20.8n pd=0.504m as=48.8n ps=1.044m w=400 l=500
+X17 VSS.t5 vin vout VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X18 vout vin VDD VDD.t8 pfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+X19 vout vin VSS.t3 VSS nfet_03v3 ad=20.8n pd=0.504m as=20.8n ps=0.504m w=400 l=500
+C0 VDD vin 8.33775f
+C1 VDD vout 1.52906f
+C2 vin vout 5.58981f
+R0 VDD.t0 VDD.t1 692.662
+R1 VDD.t1 VDD.t2 692.662
+R2 VDD.t2 VDD.t3 692.662
+R3 VDD.t3 VDD.t4 692.662
+R4 VDD.t4 VDD.t5 692.662
+R5 VDD.t5 VDD.t6 692.662
+R6 VDD.t6 VDD.t7 692.662
+R7 VDD.t7 VDD.t8 692.662
+R8 VDD.t8 VDD.t9 692.662
+R9 VDD VDD.t0 553.365
+R10 VSS.n0 VSS.t0 4.0508
+R11 VSS VSS.t7 2.2346
+R12 VSS VSS.t5 2.2346
+R13 VSS.n0 VSS.t3 2.2346
+R14 VSS.n0 VSS.t1 2.2346
+R15 VSS VSS.n0 1.6313
+C3 vout VSS 2.85985f
+C4 vin VSS 8.19183f
+C5 VDD VSS 21.50336f
+C6 VDD.t9 VSS 0.92237f ; **FLOATING
+C7 VDD.t8 VSS 0.65235f ; **FLOATING
+C8 VDD.t7 VSS 0.65235f ; **FLOATING
+C9 VDD.t6 VSS 0.65235f ; **FLOATING
+C10 VDD.t5 VSS 0.65235f ; **FLOATING
+C11 VDD.t4 VSS 0.65235f ; **FLOATING
+C12 VDD.t3 VSS 0.65235f ; **FLOATING
+C13 VDD.t2 VSS 0.65235f ; **FLOATING
+C14 VDD.t1 VSS 0.65235f ; **FLOATING
+C15 VDD.t0 VSS 0.58807f ; **FLOATING
+.ends

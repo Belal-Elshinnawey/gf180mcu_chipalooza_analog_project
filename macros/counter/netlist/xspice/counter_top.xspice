@@ -1,0 +1,175 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from counter_top.ext - technology: gf180mcuD
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fillcap_8 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__filltie abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fillcap_64 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fill_2 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fillcap_4 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__dffq_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__endcap abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nand4_4 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fillcap_32 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fill_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__buf_2 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__fillcap_16 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nor2_4 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__and2_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__xor2_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nor2_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nand3_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__buf_4 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nor2_2 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__mux2_2 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__nand2_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__buf_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__xnor2_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__and4_1 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__and4_4 abstract view
+* Black-box entry subcircuit for gf180mcu_fd_sc_mcu7t5v0__clkinv_2 abstract view
+.subckt counter_top a_VDD a_VSS a_clock_i a_reset_n_i a_enable_i
++ a_counter_value_o_3_ a_counter_value_o_0_ a_counter_value_o_1_
++ a_counter_value_o_2_ a_counter_value_o_7_ a_counter_value_o_4_
++ a_counter_value_o_5_ a_counter_value_o_6_
+A_66_ _66_/D _73_/CLK NULL NULL _66_/Q NULL ddflop
+A_49_ [_66_/Q _73_/Q _72_/Q _34_/Z] _50_/S d_lut_gf180mcu_fd_sc_mcu7t5v0__nand4_4
+Aoutput7 [_73_/Q] counter_value_o_4_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_65_ [_65_/A1 _64_/Z] _71_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_4
+A_48_ [_67_/Q _33_/I] _48_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and2_1
+Aoutput10 [_68_/Q] counter_value_o_7_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+Aoutput8 [_66_/Q] counter_value_o_5_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_64_ [_71_/Q _64_/A2] _64_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__xor2_1
+A_47_ [_67_/Q _65_/A1] _50_/I0 d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_1
+Aoutput9 [_67_/Q] counter_value_o_6_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_63_ [_63_/A1 _70_/Q _69_/Q] _64_/A2 d_lut_gf180mcu_fd_sc_mcu7t5v0__nand3_1
+A_46_ [_46_/I] _66_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_4
+A_62_ [_65_/A1 _61_/Z] _70_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_2
+A_45_ [_45_/I0 _43_/Z _45_/S] _46_/I d_lut_gf180mcu_fd_sc_mcu7t5v0__mux2_2
+A_61_ [_70_/Q _61_/A2] _61_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__xor2_1
+A_44_ [_73_/Q _72_/Q _34_/Z] _45_/S d_lut_gf180mcu_fd_sc_mcu7t5v0__nand3_1
+A_60_ [_63_/A1 _69_/Q] _61_/A2 d_lut_gf180mcu_fd_sc_mcu7t5v0__nand2_1
+A_43_ [_66_/Q _33_/I] _43_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and2_1
+A_42_ [_66_/Q _65_/A1] _45_/I0 d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_1
+A_41_ [_41_/I] _73_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_4
+A_40_ [_40_/I0 _38_/Z _40_/S] _41_/I d_lut_gf180mcu_fd_sc_mcu7t5v0__mux2_2
+Aclkbuf_1_1__f_clock_i [clkbuf_0_clock_i/Z] _73_/CLK d_lut_gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
+Ainput1 [enable_i] _63_/A1 d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_1
+Ainput2 [reset_n_i] _33_/I d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_1
+Aclkbuf_1_0__f_clock_i [clkbuf_0_clock_i/Z] _72_/CLK d_lut_gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
+A_59_ [_65_/A1 _59_/A2] _69_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_2
+A_58_ [_63_/A1 _69_/Q] _59_/A2 d_lut_gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+A_57_ [_57_/I] _68_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_4
+A_73_ _73_/D _73_/CLK NULL NULL _73_/Q NULL ddflop
+A_56_ [_56_/I0 _53_/Z _56_/S] _57_/I d_lut_gf180mcu_fd_sc_mcu7t5v0__mux2_2
+A_39_ [_72_/Q _34_/Z] _40_/S d_lut_gf180mcu_fd_sc_mcu7t5v0__nand2_1
+A_72_ _72_/D _72_/CLK NULL NULL _72_/Q NULL ddflop
+A_55_ [_34_/Z _54_/Z] _56_/S d_lut_gf180mcu_fd_sc_mcu7t5v0__nand2_1
+A_38_ [_73_/Q _33_/I] _38_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and2_1
+A_71_ _71_/D _72_/CLK NULL NULL _71_/Q NULL ddflop
+A_54_ [_67_/Q _66_/Q _73_/Q _72_/Q] _54_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and4_1
+A_37_ [_73_/Q _65_/A1] _40_/I0 d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_1
+A_70_ _70_/D _72_/CLK NULL NULL _70_/Q NULL ddflop
+A_53_ [_68_/Q _33_/I] _53_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and2_1
+A_36_ [_65_/A1 _36_/A2] _72_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_4
+A_52_ [_68_/Q _65_/A1] _56_/I0 d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_1
+A_35_ [_72_/Q _34_/Z] _36_/A2 d_lut_gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+A_51_ [_51_/I] _67_/D d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_4
+A_34_ [_71_/Q _63_/A1 _70_/Q _69_/Q] _34_/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__and4_4
+A_50_ [_50_/I0 _48_/Z _50_/S] _51_/I d_lut_gf180mcu_fd_sc_mcu7t5v0__mux2_2
+A_33_ [_33_/I] _65_/A1 d_lut_gf180mcu_fd_sc_mcu7t5v0__clkinv_2
+Aoutput3 [_69_/Q] counter_value_o_0_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_69_ _69_/D _72_/CLK NULL NULL _69_/Q NULL ddflop
+Aoutput4 [_70_/Q] counter_value_o_1_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_68_ _68_/D _73_/CLK NULL NULL _68_/Q NULL ddflop
+Aclkbuf_0_clock_i [clock_i] clkbuf_0_clock_i/Z d_lut_gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
+Aoutput5 [_71_/Q] counter_value_o_2_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+A_67_ _67_/D _73_/CLK NULL NULL _67_/Q NULL ddflop
+Aoutput6 [_72_/Q] counter_value_o_3_ d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2
+
+.model todig_3v3 adc_bridge(in_high=2.1999999999999997 in_low=1.0999999999999999 rise_delay=500p fall_delay=500p)
+.model toana_3v3 dac_bridge(out_high=3.3 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VDD] [dig_VDD] todig_3v3
+AA2D2 [a_VSS] [dig_VSS] todig_3v3
+AA2D3 [a_clock_i] [clock_i] todig_3v3
+AD2A1 [counter_value_o_0_] [a_counter_value_o_0_] toana_3v3
+AD2A2 [counter_value_o_1_] [a_counter_value_o_1_] toana_3v3
+AD2A3 [counter_value_o_2_] [a_counter_value_o_2_] toana_3v3
+AD2A4 [counter_value_o_3_] [a_counter_value_o_3_] toana_3v3
+AD2A5 [counter_value_o_4_] [a_counter_value_o_4_] toana_3v3
+AD2A6 [counter_value_o_5_] [a_counter_value_o_5_] toana_3v3
+AD2A7 [counter_value_o_6_] [a_counter_value_o_6_] toana_3v3
+AD2A8 [counter_value_o_7_] [a_counter_value_o_7_] toana_3v3
+AA2D4 [a_enable_i] [enable_i] todig_3v3
+AA2D5 [a_reset_n_i] [reset_n_i] todig_3v3
+
+.ends
+
+
+* gf180mcu_fd_sc_mcu7t5v0__fillcap_8 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__filltie (no function)
+* gf180mcu_fd_sc_mcu7t5v0__fillcap_64 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__fill_2 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__dffq_1 IQ1
+* gf180mcu_fd_sc_mcu7t5v0__endcap (no function)
+* gf180mcu_fd_sc_mcu7t5v0__nand4_4 ((!A1)|(!A2)|(!A3)|(!A4))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nand4_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1111111111111110")
+* gf180mcu_fd_sc_mcu7t5v0__fillcap_32 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__fill_1 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__buf_2 I
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* gf180mcu_fd_sc_mcu7t5v0__fillcap_16 (no function)
+* gf180mcu_fd_sc_mcu7t5v0__nor2_4 ((!A1)&(!A2))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* gf180mcu_fd_sc_mcu7t5v0__and2_1 (A1&A2)
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__and2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+* gf180mcu_fd_sc_mcu7t5v0__xor2_1 (A1^A2)
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__xor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0110")
+* gf180mcu_fd_sc_mcu7t5v0__nor2_1 ((!A1)&(!A2))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* gf180mcu_fd_sc_mcu7t5v0__nand3_1 ((!A1)|(!A2)|(!A3))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nand3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111110")
+* gf180mcu_fd_sc_mcu7t5v0__buf_4 I
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* gf180mcu_fd_sc_mcu7t5v0__nor2_2 ((!A1)&(!A2))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nor2_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* gf180mcu_fd_sc_mcu7t5v0__mux2_2 ((I0&(!S))|(I1&S))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__mux2_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01010011")
+* gf180mcu_fd_sc_mcu7t5v0__nand2_1 ((!A1)|(!A2))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__nand2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1110")
+* gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 I
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* gf180mcu_fd_sc_mcu7t5v0__buf_1 I
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* gf180mcu_fd_sc_mcu7t5v0__xnor2_1 (!(A1^A2))
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__xnor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1001")
+* gf180mcu_fd_sc_mcu7t5v0__and4_1 (A1&A2&A3&A4)
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__and4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0000000000000001")
+* gf180mcu_fd_sc_mcu7t5v0__and4_4 (A1&A2&A3&A4)
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__and4_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0000000000000001")
+* gf180mcu_fd_sc_mcu7t5v0__clkinv_2 (!I)
+.model d_lut_gf180mcu_fd_sc_mcu7t5v0__clkinv_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+.end

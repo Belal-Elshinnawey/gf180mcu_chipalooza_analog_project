@@ -1,0 +1,64 @@
+# gdsfill fill configuration for gf180mcuD, used by `make gds-fill` via
+# gdsfill's --config-file. Only `density`/`deviation` are actually honored
+# for gf180mcu: the fill-square geometry itself (size/spacing) is hardcoded
+# per layer in gdsfill's gf180mcu backend (src/pdk/gf180mcu.rs), unlike e.g.
+# ihp-sg13cmos5l, which exposes Square/Track min_width/min_space overrides.
+#
+# The values below are gdsfill's own built-in defaults for gf180mcuD
+# (src/configs/gf180mcuD.yaml upstream), left uncommented/active. Everything
+# commented out is either a hardcoded-for-gf180mcu value (shown for
+# reference only, cannot actually be overridden) or a key that was tested
+# directly against this gdsfill build and confirmed to have no effect.
+
+PDK: gf180mcuD
+
+layers:
+  COMP:
+    algorithm: Square
+    density: 40
+    deviation: 15
+    # min_width: 5.0    # hardcoded (DCF_SIZE_UM), not configurable for gf180mcu
+    # min_space: 3.0    # hardcoded (DCF_SPACE_UM), not configurable for gf180mcu
+
+  Poly2:
+    algorithm: Overlap
+    density: 20
+    deviation: 6
+
+  Metal1:
+    algorithm: Square
+    density: 35
+    deviation: 5
+    # min_width: 2.0    # hardcoded (DM_SIZE_UM), not configurable for gf180mcu
+    # min_space: 1.2    # hardcoded (DM_SPACE_UM), not configurable for gf180mcu
+
+  Metal2:
+    algorithm: Square
+    density: 35
+    deviation: 5
+
+  Metal3:
+    algorithm: Square
+    density: 35
+    deviation: 5
+
+  Metal4:
+    algorithm: Square
+    density: 35
+    deviation: 5
+
+  Metal5:
+    algorithm: Square
+    density: 35
+    deviation: 5
+    # min_space: 2.0    # possibly DM_SPACE_TOP_UM if treated as top metal - hardcoded, not configurable
+
+# Top-level keys below exist elsewhere in gdsfill's schema (other PDKs'
+# constants files) or were tested directly against this build via --dry-run.
+# None of them had any measurable effect on a gf180mcuD run - left here,
+# commented out, purely as a record of what was tried:
+# tile_width: 100
+# margin: 0
+# edge_margin: 0
+# border: 0
+# keepout_margin: 0

@@ -310,7 +310,11 @@ render-gds: ## Render images from the final GDS using sak-render.py
 
 
 # Fill Target
-gds-fill: ## Insert PDK-compliant dummy fill into CELL's layout via gdsfill (backs up first; MetalTop has no native gdsfill support on gf180mcuD, so it's relabeled as Metal5 in an isolated scratch GDS, filled with gdsfill's own tested Metal5 algorithm, then relabeled back - before running the main fill pass on a disposable flattened dbu=0.005 scratch copy with pr_bndry grown 26um and *_BLK markers stamped as real metal; both passes then replace gdsfill's own Metal5 fill with a tighter tiling at gf180mcu's real 0.98um minimum spacing instead of gdsfill's more conservative hardcoded value, since gdsfill's own Metal5/MetalTop density can't otherwise clear the 30% DRC floor; both rescale back to the original's dbu and transplant only their resulting dummy-fill layers into the real hierarchy-intact CELL; usage: make gds-fill [CELL=<cellname>])
+# MetalTop has no native gdsfill support on gf180mcuD, so it's filled via a relabeled-as-Metal5
+# scratch copy; both passes then re-tile at gf180mcu's real 0.98um min spacing (gdsfill's own
+# Metal5/MetalTop density can't otherwise clear the 30% DRC floor) before transplanting the
+# resulting fill layers back into the real CELL.
+gds-fill: ## Insert PDK-compliant dummy fill into CELL's layout via gdsfill (backs up first; usage: make gds-fill [CELL=<cellname>])
 	mkdir -p $(LAY_DIR)/backups
 	@TS=$$(date +%Y-%m-%d_%Hh%Mm%S); RAND=$$((RANDOM % 1000)); \
 	BACKUP=$(LAY_DIR)/backups/$(CELL)_backup_$${TS}_$$(printf '%03d' $$RAND).gds; \

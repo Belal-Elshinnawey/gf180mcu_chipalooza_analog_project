@@ -1,25 +1,11 @@
 #!/usr/bin/env python3
-"""Replace gdsfill's dummy fill on one metal layer with a tighter tiling
-that uses the real gf180mcu minimum spacing instead of gdsfill's own,
-more conservative, hardcoded value.
+"""Replace gdsfill's dummy fill on one metal layer with a tighter tiling at gf180mcu's real
+0.98um min dummy-to-dummy spacing (DM#{idx}.2b), since gdsfill's own wider hardcoded spacing
+can't clear the 30% density floor. Keeps the real DM#{idx}.3 clearance from drawn metal and
+avoids *_BLK markers.
 
-gf180mcu's actual rule (DM#{idx}.2b, dummy_metal.rb) requires only 0.98um
-minimum dummy-to-dummy spacing, applied identically to every metal index
-1-5. gdsfill's own gf180mcu backend appears to use a wider spacing for
-"top" metal (around 2.0um), capping its achievable square-grid density at
-~25% - below the 30% DRC floor (M5.4/MT.3) no matter how much area is
-available. At the real 0.98um minimum, the same 2.0um squares pack to
-~45% theoretical density, comfortably clearing the floor.
-
-Keeps DM#{idx}.3's real requirement (2um clearance from *real* drawn
-metal on the same layer) - that one is a genuine constraint, not gdsfill
-being overly cautious. Also avoids any *_BLK fill-exclusion marker on the
-same layer entirely (no clearance math needed there, just no overlap).
-
-Does NOT check DM#{idx}.8 (6um clearance from FuseTop/POLYFUSE/
-FUSEWINDOW_D/PMNDMY/MTPMK/OTP_MK) - not implemented since this design has
-none of those structures. Would need adding before reuse on a design that
-does.
+Does NOT implement DM#{idx}.8 (FuseTop/POLYFUSE/FUSEWINDOW_D/PMNDMY/MTPMK/OTP_MK clearance) -
+add it before reuse on a design that has those structures.
 """
 import sys
 import pya

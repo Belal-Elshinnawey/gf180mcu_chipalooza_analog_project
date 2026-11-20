@@ -16,9 +16,7 @@ if { ![info exists env(PDK)] } {
   set ::env(PDK) gf180mcuD
 }
 
-# Source the PDK xschemrc file (guarded by our own sentinel: the PDK's xschemrc does
-# "set XSCHEM_LIBRARY_PATH {}" unconditionally, so re-sourcing it from every chained
-# xschemrc would wipe out every library path appended by the ones sourced before it)
+# Source the PDK xschemrc once (it resets XSCHEM_LIBRARY_PATH, so re-sourcing would wipe paths already appended)
 if {![info exists ::XSCHEM_PDK_RC_SOURCED]} {
     source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
     set ::XSCHEM_PDK_RC_SOURCED 1

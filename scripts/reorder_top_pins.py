@@ -1,11 +1,9 @@
 # SPDX-FileCopyrightText: 2026 Tim Edwards and Simon Dorrer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
-# Description: Reorder a netlist's top-cell .subckt header to match another netlist's pin order
-# for the same cell, by name. Unlike a macro instantiated elsewhere (see
-# blackbox_digital_macros.py's reorder_to_symbol_order), the absolute top cell has no caller in
-# either netlist to keep in sync, so only the header needs rewriting. Magic's extraction order
-# for the top cell's own ports has no relation to how Xschem orders them, and netgen's top-level
-# pin matching needs them aligned the same way the schematic lists them.
+# Description: Reorder a netlist's top-cell .subckt header to match another netlist's pin order,
+# by name. Unlike a macro instance (see blackbox_digital_macros.py's reorder_to_symbol_order),
+# the top cell has no caller, so only the header needs rewriting - Magic's extraction order
+# doesn't match Xschem's, and netgen's top-level pin matching needs them aligned.
 
 import argparse
 import re

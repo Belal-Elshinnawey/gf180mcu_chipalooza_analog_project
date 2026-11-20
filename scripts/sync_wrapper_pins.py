@@ -1,14 +1,11 @@
 # SPDX-FileCopyrightText: 2026 Tim Edwards and Simon Dorrer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
-# Description: Sync the top schematic to one floorplan slot's wrapper: rename the slot_<N>.sch to
-# the requested slot number, update its s<N>_an analog I/O pins, add any individual pin the wrapper
-# GDS carries that the schematic doesn't have yet, and regenerate slot_<N>.sym from the schematic
-# with xschem's own make_symbol (the standard tool, not hand-written symbol geometry). The _pex.sym
-# is built afterwards by the existing 'make symbol-pex' target. Every pin is kept as its own
-# individual ipin/opin/iopin instance (e.g. dig_in[0]..dig_in[23]), never collapsed into a bus pin.
-# Slots 2/8 carry an extra 'vss5v0' pin, slots 11/17 an extra 'vss3v3' pin - a real, separate
-# externally-accessible VSS pin on those slots only, not a naming typo in the wrapper GDS. Pins
-# the schematic has that the target wrapper does not are removed to match.
+# Description: Sync the top schematic to one floorplan slot's wrapper: rename slot_<N>.sch, update
+# its s<N>_an analog I/O pins, add any wrapper pin the schematic is missing, and regenerate
+# slot_<N>.sym via xschem's make_symbol (_pex.sym comes from the existing 'make symbol-pex' target).
+# Every pin stays its own ipin/opin/iopin instance, never collapsed into a bus. Slots 2/8 carry an
+# extra real 'vss5v0' pin, slots 11/17 an extra real 'vss3v3' pin - not a wrapper-GDS typo. Pins the
+# schematic has that the target wrapper doesn't are removed.
 
 import argparse
 import glob

@@ -1,27 +1,17 @@
 # SPDX-FileCopyrightText: 2026 Tim Edwards and Simon Dorrer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 # Description: Black-box every digital macro in a SPICE netlist for top-level LVS. A macro is
-# detected as "digital" by its .sym carrying sim_pinname= attributes (the bridge verilog2sym.py
-# uses between the schematic's symbol pin names and the real hardened layout's port names - only
-# macros built that way need this). On the layout-side netlist, a detected macro's real
-# .subckt ... .ends body (its hardened gate-level implementation) is stripped down to just the
-# pin-list header. On the schematic-side netlist, type=primitive symbols produce no .subckt
-# definition at all, so one is synthesized (pin count only, taken from the macro's own instance
-# call) so netgen has something to match.
+# detected by its .sym carrying sim_pinname= attributes. On the layout side, a macro's real
+# .subckt body is stripped to just the pin-list header; on the schematic side (type=primitive,
+# no .subckt at all), one is synthesized from the instance call.
 #
-# Pin ORDER matters here even though the cells end up empty: netgen's "-blackbox" matching is
-# purely positional (there is no content left to disambiguate by), and Magic's own extraction
-# order for a macro's pins has no relation to its .sym's declared pin order (e.g. Magic may put
-# VDD/VSS last, while the symbol - and therefore the schematic's instance call, which Xschem
-# always writes in the symbol's own pin order - has them first). So before stripping, any netlist
-# that has a REAL (non-stub) definition for a macro gets that definition's header AND its calling
-# instance line reordered to the macro's .sym pin order, via sim_pinname. The schematic side is
-# left alone: it never has a real definition (type=primitive), and its instance call is already
-# in symbol order by construction.
+# Pin order matters even though the cells end up empty: netgen's "-blackbox" matching is purely
+# positional, and Magic's extraction order doesn't match the .sym's declared order. So any real
+# (non-stub) definition gets its header and instance line reordered to .sym pin order via
+# sim_pinname first; the schematic side is already in symbol order by construction.
 #
-# Run netgen's "lvs -blackbox" afterwards: it treats same-named empty subcircuits on both sides
-# as matched by pin count, not content - which now also means "same position", since both sides
-# agree on pin order.
+# Run netgen's "lvs -blackbox" afterwards - same-named empty subcircuits then match by pin count
+# and position.
 
 import argparse
 import glob
@@ -189,10 +179,8 @@ def blackbox(netlist_path, macros, all_macros):
     lines = open(netlist_path, encoding="utf-8").read().splitlines()
     handled = set()
 
-    # Normalize every instantiated macro (not just the digital ones to be black-boxed) to its
-    # .sym's declared pin order, on both the header and the calling instance line. Magic's
-    # extraction order has no relation to Xschem's symbol-driven order, and that mismatch alone
-    # can make netgen's top-level pin matching fail even when connectivity is already correct.
+    # Normalize every instantiated macro (not just the ones to black-box) to its .sym pin order -
+    # Magic's extraction order vs Xschem's symbol order mismatch alone can break netgen's matching.
     for name, sym_path in sorted(all_macros.items()):
         lines = reorder_to_symbol_order(lines, name, sym_path, netlist_path)
 

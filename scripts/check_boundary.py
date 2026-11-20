@@ -6,9 +6,8 @@ import argparse
 import sys
 
 # GDS layer of pr_bndry for gf180mcuD (generic_layers.rb: extract_single_layer_from_design.call(:pr_bndry, 0, 0)).
-# Magic maps every datatype of it to its boundary layer, and LibreLane's Magic.StreamOut reads the
-# FIXED_BBOX derived from it for every macro it places. NOTE: this was layer 189 in the IHP
-# sg13cmos5l port this template descends from - gf180mcuD uses layer 0 instead, not 189.
+# Magic maps every datatype of it to its boundary layer; LibreLane's Magic.StreamOut reads the
+# FIXED_BBOX derived from it for every macro it places.
 BOUNDARY_LAYER = 0
 
 

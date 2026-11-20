@@ -177,8 +177,7 @@ def main():
     gain_color = '#ff6b35'
     vin_color = '#2f855a'
 
-    # gf180mcuD core devices run at VDD=3.3V (vs. the IHP sg13cmos5l port's 1.5V),
-    # set in the testbenches' .param VDD=3.3 -- keep these axis ranges in sync with that.
+    # Keep in sync with the testbenches' .param VDD=3.3
     vdd_axis = 3.3
 
     fig2, ax1 = plt.subplots(figsize=(10, 6.2))

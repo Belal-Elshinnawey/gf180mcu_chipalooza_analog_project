@@ -1,19 +1,11 @@
 # SPDX-FileCopyrightText: 2026 Tim Edwards and Simon Dorrer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
-# Description: Splice a digital macro's real, pre-extracted gate-level netlist into a top-level
-# LVS schematic netlist, in place of black-boxing it. A hardened macro's symbol is type=primitive
-# (no .subckt body at all from Xschem), so without this, netgen has only an empty/undefined
-# reference to compare against the layout's real gates - which makes its automorphism resolver
-# unable to disambiguate symmetric-looking nets (e.g. two power rails) once the macro has zero
-# internal structure. Giving it real content instead - the same gate-level netlist produced by
-# the macro's own build flow - lets netgen flatten-and-match it like any other real subcircuit
-# (the same way it already handles a plain analog macro such as the inverter).
-#
-# The reference netlist's own .subckt header is reordered to the macro's .sym pin order first
-# (Magic/LibreLane's own extraction order has no relation to it, same issue as in
-# blackbox_digital_macros.py's reorder_to_symbol_order) - the body's internal wiring is untouched,
-# since it refers to nodes by name, not position; only the header's formal parameter order needs
-# to agree with how Xschem's instance call (written in the .sym's order) binds to it.
+# Description: Splice a digital macro's real gate-level netlist into a top-level LVS schematic
+# netlist instead of black-boxing it. A hardened macro's symbol is type=primitive (no .subckt
+# body), so netgen's automorphism resolver can't disambiguate symmetric nets against an empty
+# reference - the real netlist fixes that. Its .subckt header is reordered to the macro's .sym
+# pin order first (see blackbox_digital_macros.py's reorder_to_symbol_order); the body's wiring
+# is untouched since it refers to nodes by name, not position.
 
 import argparse
 import glob
